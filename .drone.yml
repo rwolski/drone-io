@@ -1,0 +1,15 @@
+pipeline:
+  backend:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
+
+  publish:
+    image: plugins/docker
+    username: rwolski
+    password: test
+    email: test@gmail.com
+    repo: rwolski/drone-io
+    tags: latest
